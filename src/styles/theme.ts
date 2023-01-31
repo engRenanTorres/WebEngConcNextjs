@@ -193,7 +193,7 @@ export const themeSettings = (mode: string) => {
   };
 };
 
-const theme = themeSettings('light');
+export const themeType = themeSettings('light');
 
 // context for color mode
 export const ColorModeContext = createContext({
