@@ -2,7 +2,6 @@
 import { Question } from '@/domain/questions/questions';
 import { Container } from './styles';
 import { useId } from 'react';
-import { Header } from '@/components/Header';
 
 export type QuestionProps = {
   questions: Question[];
@@ -11,7 +10,6 @@ export type QuestionProps = {
 export default function ListQuestionsPage({ questions }: QuestionProps) {
   return (
     <Container>
-      <Header />
       {questions.map((questions) => (
         <>
           <h1 key={useId()}>question {questions.id}</h1>

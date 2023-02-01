@@ -117,7 +117,8 @@ export const colors = [
 ];
 
 // mui theme settings
-export const theme = {
+export const themeDefault = {
+  title: 'Default',
   palette: {
     // palette values for light mode
     primary: {
@@ -166,6 +167,7 @@ export const theme = {
 };
 
 export const themeDark = {
+  title: 'Dark',
   palette: {
     // palette values for dark mode
     primary: {

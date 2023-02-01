@@ -1,6 +1,6 @@
-import { theme } from './theme';
+import { themeDefault } from './theme';
 
-type theme = typeof theme;
+type theme = typeof themeDefault;
 
 declare module 'styled-components' {
   //interface vazia para merge com interface já existente
