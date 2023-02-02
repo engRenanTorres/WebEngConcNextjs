@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Header } from '@/components/Header';
 import { GlobalStyles } from '@/styles/global-styles';
-import { themeDefault, themeDark } from '@/styles/theme';
-import usePersistedState from '@/utils/usePersistedState';
+import { GetTheme } from '@/utils/getTheme';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
@@ -12,15 +10,8 @@ const container = styled.div`
 ` */
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = usePersistedState('theme', themeDefault);
-
-  const toggleTheme = () => {
-    setTheme(theme.title === 'Default' ? themeDark : themeDefault);
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      <Header toggleTheme={toggleTheme} />
+    <ThemeProvider theme={GetTheme()}>
       <Component {...pageProps} />
       <GlobalStyles />
     </ThemeProvider>

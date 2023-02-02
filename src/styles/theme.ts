@@ -116,6 +116,44 @@ export const colors = [
   },
 ];
 
+const typography = {
+  fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
+  fontSize: {
+    small: '1.2rem',
+    medium: '1.6rem',
+    large: '2rem',
+  },
+  h1: {
+    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
+    fontSize: '2.8rem',
+  },
+  h2: {
+    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
+    fontSize: '2.6rem',
+  },
+  h3: {
+    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
+    fontSize: '2.4rem',
+  },
+  h4: {
+    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
+    fontSize: '2.2rem',
+  },
+  h5: {
+    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
+    fontSize: '2.0rem',
+  },
+  h6: {
+    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
+    fontSize: '1.8rem',
+  },
+};
+const spacings = {
+  small: '1.2rem',
+  medium: '1.6rem',
+  large: '2rem',
+};
+
 // mui theme settings
 export const themeDefault = {
   title: 'Default',
@@ -136,34 +174,8 @@ export const themeDefault = {
       default: '#fcfcfc',
     },
   },
-  typography: {
-    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: 12,
-    h1: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 40,
-    },
-    h2: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 32,
-    },
-    h3: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 24,
-    },
-    h4: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 20,
-    },
-    h5: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 16,
-    },
-    h6: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 14,
-    },
-  },
+  typography: typography,
+  spacings: spacings,
 };
 
 export const themeDark = {
@@ -185,33 +197,6 @@ export const themeDark = {
       default: colors[0].primary[500],
     },
   },
-
-  typography: {
-    fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: 12,
-    h1: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 40,
-    },
-    h2: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 32,
-    },
-    h3: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 24,
-    },
-    h4: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 20,
-    },
-    h5: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 16,
-    },
-    h6: {
-      fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 14,
-    },
-  },
+  typography: typography,
+  spacings: spacings,
 };
