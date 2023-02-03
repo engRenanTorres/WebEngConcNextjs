@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { Header } from '@/components/Header';
+import { Header } from '@/components/global/Header';
+import Topbar from '@/components/global/Topbar';
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header />
+        <Header title="Home" subtitle="Bem vindo" />
         <h1>oi</h1>
       </main>
     </>

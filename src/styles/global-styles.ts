@@ -10,7 +10,6 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     width: 100%;
     font-family: "Source Sans Pro", sans-serif;
-    background: ${({ theme }) => theme.palette.background.default};
     margin: 0;
   }
 
@@ -31,28 +30,16 @@ export const GlobalStyles = createGlobalStyle`
     font-size: ${({ theme }) => theme.typography.fontSize.medium};
   }
 
-  h1 {
-    font-size: ${({ theme }) => theme.typography.h1.fontSize};
-  }
-  h2 {
-    font-size: ${({ theme }) => theme.typography.h2.fontSize};
-  }
-  h3 {
-    font-size: ${({ theme }) => theme.typography.h3.fontSize};
-  }
-  h4 {
-    font-size: ${({ theme }) => theme.typography.h4.fontSize};
-  }
-  h5 {
-    font-size: ${({ theme }) => theme.typography.h5.fontSize};
-  }
-  h6 {
-    font-size: ${({ theme }) => theme.typography.h6.fontSize};
-  }
+
 
   .app {
     display: flex;
     position: relative;
+  }
+
+  .content-page {
+    width: 100%;
+    height: 100%;
   }
 
   ::-webkit-scrollbar {

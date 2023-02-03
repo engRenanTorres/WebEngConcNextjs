@@ -2,7 +2,7 @@
 import { Question } from '@/domain/questions/questions';
 import { Container } from './styles';
 import { useId } from 'react';
-import { Header } from '@/components/Header';
+import { Header } from '@/components/global/Header';
 
 export type QuestionProps = {
   questions: Question[];
