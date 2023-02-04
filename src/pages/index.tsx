@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Header } from '@/components/global/Header';
 import Topbar from '@/components/global/Topbar';
+import { HOME_SUBTITLE, HOME_TITLE } from '@/config/app-messages';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Header title="Home" subtitle="Bem vindo" />
+        <Header title={HOME_TITLE} subtitle={HOME_SUBTITLE} />
         <h1>oi</h1>
       </main>
     </>
