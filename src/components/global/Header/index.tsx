@@ -10,17 +10,17 @@ type Props = {
 export const Header: React.FC<Props> = ({ title, subtitle }: Props) => {
   return (
     <HeaderStyled>
-      <Box mb="30px">
+      <Box mb='30px'>
         <Typography
-          className="typography"
-          variant="h2"
+          className='typography'
+          variant='h2'
           color={colors[0].grey[100]}
-          fontWeight="bold"
+          fontWeight='bold'
           sx={{ m: '0 0 5px 0' }}
         >
           {title}
         </Typography>
-        <Typography variant="h5" color={colors[0].greenAccent[400]}>
+        <Typography variant='h5' color={colors[0].greenAccent[400]}>
           {subtitle}
         </Typography>
       </Box>

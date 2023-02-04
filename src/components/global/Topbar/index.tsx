@@ -5,31 +5,31 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { ThemeSwitch } from '@/components/ThemeSwitch';
-import { StyledSearch, StyledBox, StyledIcon } from './styles';
+import { StyledBox } from './styles';
 
 const Topbar = () => {
   return (
-    <StyledBox display="flex" justifyContent="space-between" p={2}>
+    <StyledBox>
       {/* SEARCH BAR */}
-      <StyledSearch display="flex" borderRadius="3px">
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-        <StyledIcon type="button" sx={{ p: 1 }}>
+      <Box className='search-box'>
+        <InputBase sx={{ ml: 2, flex: 1 }} placeholder='Search' />
+        <IconButton className='icon-button' type='button' sx={{ p: 1 }}>
           <SearchIcon />
-        </StyledIcon>
-      </StyledSearch>
+        </IconButton>
+      </Box>
 
       {/* ICONS */}
-      <Box display="flex">
+      <Box display='flex'>
         <ThemeSwitch />
-        <StyledIcon>
+        <IconButton className='icon-button'>
           <NotificationsOutlinedIcon />
-        </StyledIcon>
-        <StyledIcon>
+        </IconButton>
+        <IconButton className='icon-button'>
           <SettingsOutlinedIcon />
-        </StyledIcon>
-        <StyledIcon>
+        </IconButton>
+        <IconButton className='icon-button'>
           <PersonOutlinedIcon />
-        </StyledIcon>
+        </IconButton>
       </Box>
     </StyledBox>
   );

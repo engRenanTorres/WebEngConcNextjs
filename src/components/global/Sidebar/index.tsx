@@ -45,7 +45,7 @@ const Sidebar = () => {
       }}
     >
       <ProSidebar collapsed={isCollapsed}>
-        <Menu iconShape="square">
+        <Menu iconShape='square'>
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
@@ -57,12 +57,12 @@ const Sidebar = () => {
           >
             {!isCollapsed && (
               <Box
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                ml="15px"
+                display='flex'
+                justifyContent='space-between'
+                alignItems='center'
+                ml='15px'
               >
-                <Typography variant="h3" color={theme.palette.neutral.light}>
+                <Typography variant='h3' color={theme.palette.neutral.light}>
                   ADMINIS
                 </Typography>
                 <StyledIcon onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -73,8 +73,8 @@ const Sidebar = () => {
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px">
-              <Box display="flex" justifyContent="center" alignItems="center">
+            <Box mb='25px'>
+              <Box display='flex' justifyContent='center' alignItems='center'>
                 {/*<img
                   alt="profile-user"
                   width="100px"
@@ -83,23 +83,23 @@ const Sidebar = () => {
                   style={{ cursor: 'pointer', borderRadius: '50%' }}
                 />*/}
                 <Image
-                  src="/images/favicon.svg"
+                  src='/images/favicon.svg'
                   width={100}
                   height={100}
-                  alt="Logo do site Engenharia de concursos"
+                  alt='Logo do site Engenharia de concursos'
                 />
               </Box>
-              <Box textAlign="center">
+              <Box textAlign='center'>
                 <Typography
-                  variant="h2"
+                  variant='h2'
                   color={theme.palette.neutral.light}
-                  fontWeight="bold"
+                  fontWeight='bold'
                   fontSize={theme.typography.h2.fontSize}
                   sx={{ m: '10px 0 0 0' }}
                 >
                   Engenharia de Concursos
                 </Typography>
-                <Typography variant="h5" color={theme.palette.secondary.main}>
+                <Typography variant='h5' color={theme.palette.secondary.main}>
                   Simulador de provas
                 </Typography>
               </Box>
@@ -108,8 +108,8 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : '10%'}>
             <Item
-              title="Dashboard"
-              to="/"
+              title='Dashboard'
+              to='/'
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -117,22 +117,22 @@ const Sidebar = () => {
 
             <ItemsTile>Data</ItemsTile>
             <Item
-              title="Manage Team"
-              to="/team"
+              title='Manage Team'
+              to='/team'
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Contacts Information"
-              to="/contacts"
+              title='Contacts Information'
+              to='/contacts'
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
-              to="/invoices"
+              title='Invoices Balances'
+              to='/invoices'
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -140,22 +140,22 @@ const Sidebar = () => {
 
             <ItemsTile>Pages</ItemsTile>
             <Item
-              title="Profile Form"
-              to="/form"
+              title='Profile Form'
+              to='/form'
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Calendar"
-              to="/calendar"
+              title='Calendar'
+              to='/calendar'
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="FAQ Page"
-              to="/faq"
+              title='FAQ Page'
+              to='/faq'
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -163,29 +163,29 @@ const Sidebar = () => {
 
             <ItemsTile>Charts</ItemsTile>
             <Item
-              title="Bar Chart"
-              to="/bar"
+              title='Bar Chart'
+              to='/bar'
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Pie Chart"
-              to="/pie"
+              title='Pie Chart'
+              to='/pie'
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Line Chart"
-              to="/line"
+              title='Line Chart'
+              to='/line'
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Geography Chart"
-              to="/geography"
+              title='Geography Chart'
+              to='/geography'
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

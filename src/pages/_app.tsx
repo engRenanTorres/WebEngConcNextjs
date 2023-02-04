@@ -4,7 +4,6 @@ import Topbar from '@/components/global/Topbar';
 import { GlobalStyles } from '@/styles/global-styles';
 import { GetTheme } from '@/utils/getTheme';
 import type { AppProps } from 'next/app';
-import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 /* Para pegar theme
@@ -15,9 +14,9 @@ const container = styled.div`
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={GetTheme()}>
-      <div className="app">
+      <div className='app'>
         <Sidebar />
-        <div className="content-page">
+        <div className='content-page'>
           <Topbar />
           <Component {...pageProps} />
         </div>

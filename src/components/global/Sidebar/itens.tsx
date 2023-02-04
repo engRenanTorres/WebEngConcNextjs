@@ -43,8 +43,8 @@ export const ItemsTile: React.FC<Props> = ({ children }: Props) => {
   const theme = GetTheme();
   return (
     <Typography
-      variant="h6"
-      className="x"
+      variant='h6'
+      className='x'
       color={theme.palette.secondary.light}
       sx={{ m: '15px 0 5px 20px' }}
     >
