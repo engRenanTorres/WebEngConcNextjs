@@ -1,3 +1,7 @@
+//------sidebar
+export const LOGO_TITLE = 'Engenharia de Concursos';
+export const LOGO_SUBTITLE = 'Simule Concursos';
+//------home
 export const HOME_TITLE = 'Página Inicial';
 export const HOME_SUBTITLE = 'Bem vindo!';
 

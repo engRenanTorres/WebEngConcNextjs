@@ -15,7 +15,7 @@ export const ThemeSwitch: React.FC = () => {
       <FormGroup>
         <FormControlLabel
           control={<Switch checked={checked} onChange={handleChangeTheme} />}
-          label="Tema"
+          label="Tema Dark"
         />
       </FormGroup>
     </SwitchThemeStyled>

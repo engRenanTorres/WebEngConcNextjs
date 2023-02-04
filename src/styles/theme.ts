@@ -120,32 +120,32 @@ const typography = {
   fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
   fontSize: {
     small: '1.2rem',
-    medium: '1.6rem',
-    large: '2rem',
+    medium: '1.4rem',
+    large: '1.8rem',
   },
   h1: {
     fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: '2.8rem',
+    fontSize: '2.2rem',
   },
   h2: {
     fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: '2.6rem',
+    fontSize: '2.0rem',
   },
   h3: {
     fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: '2.4rem',
+    fontSize: '1.8rem',
   },
   h4: {
     fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: '2.2rem',
+    fontSize: '1.6rem',
   },
   h5: {
     fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: '2.0rem',
+    fontSize: '1.4rem',
   },
   h6: {
     fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-    fontSize: '1.8rem',
+    fontSize: '1.2rem',
   },
 };
 const spacings = {
@@ -161,9 +161,11 @@ export const themeDefault = {
     // palette values for light mode
     primary: {
       main: colors[1].primary[100],
+      light: colors[1].primary[400],
     },
     secondary: {
       main: colors[1].greenAccent[500],
+      light: colors[1].grey[300],
     },
     neutral: {
       dark: colors[1].grey[700],
@@ -184,9 +186,11 @@ export const themeDark = {
     // palette values for dark mode
     primary: {
       main: colors[0].primary[500],
+      light: colors[0].primary[400],
     },
     secondary: {
       main: colors[0].greenAccent[500],
+      light: colors[0].grey[300],
     },
     neutral: {
       dark: colors[0].grey[700],

@@ -1,7 +1,6 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { Box, IconButton, Typography, useTheme } from '@mui/material';
-import Link from 'next/link';
+import { Box, Typography } from '@mui/material';
 import 'react-pro-sidebar/dist/css/styles.css';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
@@ -16,44 +15,12 @@ import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import { GetTheme } from '@/utils/getTheme';
-import { colors as colorsTheme } from '@/styles/theme';
 import Image from 'next/image';
-
-type Props = {
-  title: string;
-  to: string;
-  icon: any;
-  selected: string;
-  setSelected: Dispatch<SetStateAction<string>>;
-};
-
-const Item: React.FC<Props> = ({
-  title,
-  to,
-  icon,
-  selected,
-  setSelected,
-}: Props) => {
-  const theme = GetTheme();
-  const colors = colorsTheme[0];
-  return (
-    <MenuItem
-      active={selected === title}
-      style={{
-        color: colors.grey[100],
-      }}
-      onClick={() => setSelected(title)}
-      icon={icon}
-    >
-      <Typography>{title}</Typography>
-      <Link href={to} />
-    </MenuItem>
-  );
-};
+import { StyledIcon } from './styled';
+import { Item, ItemsTile } from './itens';
 
 const Sidebar = () => {
-  const theme = useTheme();
-  const colors = colorsTheme[0];
+  const theme = GetTheme();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState('Dashboard');
 
@@ -61,7 +28,7 @@ const Sidebar = () => {
     <Box
       sx={{
         '& .pro-sidebar-inner': {
-          background: `${colors.primary[400]} !important`,
+          background: `${theme.palette.primary.light} !important`,
         },
         '& .pro-icon-wrapper': {
           backgroundColor: 'transparent !important',
@@ -85,7 +52,7 @@ const Sidebar = () => {
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
               margin: '10px 0 20px 0',
-              color: colors.grey[100],
+              color: theme.palette.neutral.light,
             }}
           >
             {!isCollapsed && (
@@ -95,12 +62,12 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
+                <Typography variant="h3" color={theme.palette.neutral.light}>
                   ADMINIS
                 </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                <StyledIcon onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
-                </IconButton>
+                </StyledIcon>
               </Box>
             )}
           </MenuItem>
@@ -125,14 +92,15 @@ const Sidebar = () => {
               <Box textAlign="center">
                 <Typography
                   variant="h2"
-                  color={colors.grey[100]}
+                  color={theme.palette.neutral.light}
                   fontWeight="bold"
+                  fontSize={theme.typography.h2.fontSize}
                   sx={{ m: '10px 0 0 0' }}
                 >
-                  Ed Roh
+                  Engenharia de Concursos
                 </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                <Typography variant="h5" color={theme.palette.secondary.main}>
+                  Simulador de provas
                 </Typography>
               </Box>
             </Box>
@@ -147,13 +115,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: '15px 0 5px 20px' }}
-            >
-              Data
-            </Typography>
+            <ItemsTile>Data</ItemsTile>
             <Item
               title="Manage Team"
               to="/team"
@@ -176,13 +138,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: '15px 0 5px 20px' }}
-            >
-              Pages
-            </Typography>
+            <ItemsTile>Pages</ItemsTile>
             <Item
               title="Profile Form"
               to="/form"
@@ -205,13 +161,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: '15px 0 5px 20px' }}
-            >
-              Charts
-            </Typography>
+            <ItemsTile>Charts</ItemsTile>
             <Item
               title="Bar Chart"
               to="/bar"
