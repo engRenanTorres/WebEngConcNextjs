@@ -1,5 +1,5 @@
 import { themeDark, themeDefault } from '@/styles/theme';
-import router from 'next/router';
+import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { DefaultTheme } from 'styled-components';
 
@@ -10,27 +10,20 @@ export function toggleTheme(changeToDark: boolean) {
 }
 
 export const GetTheme = (): DefaultTheme => {
-  const [modeActivated, setModeActivated] = useState<string | null>('Default');
-  const [theme, setTheme] = useState(themeDefault);
+  const { resolvedTheme } = useTheme();
+  const [fullTheme, setFullTheme] = useState(themeDefault);
 
   useEffect(() => {
     const rawStoregedData = localStorage.getItem('theme');
     if (rawStoregedData !== null) {
-      setModeActivated(JSON.parse(rawStoregedData));
-      modeActivated === 'Default'
-        ? setTheme(themeDefault)
-        : setTheme(themeDark);
-    } else setTheme(themeDefault);
-  }, [modeActivated, theme]);
-  return theme;
+      resolvedTheme === 'light'
+        ? setFullTheme(themeDefault)
+        : setFullTheme(themeDark);
+    } else setFullTheme(themeDefault);
+  }, [fullTheme, resolvedTheme]);
+  return fullTheme;
 };
 export const CheckTheme = (): boolean => {
-  const [modeActivated, setModeActivated] = useState<string | null>('Default');
-  useEffect(() => {
-    const rawStoregedData = localStorage.getItem('theme');
-    if (rawStoregedData !== null) {
-      setModeActivated(JSON.parse(rawStoregedData));
-    } else setModeActivated('Default');
-  }, []);
-  return modeActivated === 'Dark' ? true : false;
+  const { theme } = useTheme();
+  return theme === 'dark' ? true : false;
 };

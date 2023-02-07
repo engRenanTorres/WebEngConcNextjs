@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
     font-family: "Source Sans Pro", sans-serif;
     margin: 0;
+
   }
 
   html {
@@ -28,6 +29,13 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-size: ${({ theme }) => theme.typography.fontSize.medium};
+    background: white;
+  }
+  [data-theme="dark"] {
+    body {
+      background: blue;
+
+    }
   }
 
   h1 {

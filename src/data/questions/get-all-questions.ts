@@ -1,4 +1,4 @@
-import { LIST_QUESTIONS_URL } from '@/config/app-config';
+import { LIST_QUESTIONS_URL } from '@/config/appConfig';
 import { Question } from '@/domain/questions/questions';
 import { fetchJson } from '@/utils/fetchJson';
 

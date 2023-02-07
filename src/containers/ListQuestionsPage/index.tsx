@@ -6,7 +6,7 @@ import { Header } from '@/components/global/Header';
 import {
   LIST_QUESTIONS_SUBTITLE,
   LIST_QUESTIONS_TITLE,
-} from '@/config/app-messages';
+} from '@/config/appMessages';
 
 export type QuestionProps = {
   questions: Question[];

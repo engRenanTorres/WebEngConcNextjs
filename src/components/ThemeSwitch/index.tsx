@@ -2,12 +2,16 @@ import { SwitchThemeStyled } from './styled';
 import { FormControlLabel, FormGroup, Switch } from '@mui/material';
 import { CheckTheme, toggleTheme } from '@/utils/getTheme';
 import { ChangeEvent } from 'react';
-import router from 'next/router';
+import { useTheme } from 'next-themes';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 export const ThemeSwitch: React.FC = () => {
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const handleChangeTheme = (event: ChangeEvent<HTMLInputElement>) => {
     toggleTheme(event.target.checked);
-    router.reload();
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+    //router.reload();
   };
   const checked = CheckTheme();
   return (
@@ -15,7 +19,7 @@ export const ThemeSwitch: React.FC = () => {
       <FormGroup>
         <FormControlLabel
           control={<Switch checked={checked} onChange={handleChangeTheme} />}
-          label='Tema Dark'
+          label={theme === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
         />
       </FormGroup>
     </SwitchThemeStyled>

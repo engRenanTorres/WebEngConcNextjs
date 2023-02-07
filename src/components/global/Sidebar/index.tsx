@@ -29,6 +29,7 @@ const Sidebar = () => {
       sx={{
         '& .pro-sidebar-inner': {
           background: `${theme.palette.primary.light} !important`,
+          height: '100vh',
         },
         '& .pro-icon-wrapper': {
           backgroundColor: 'transparent !important',
@@ -62,7 +63,11 @@ const Sidebar = () => {
                 alignItems='center'
                 ml='15px'
               >
-                <Typography variant='h3' color={theme.palette.neutral.light}>
+                <Typography
+                  variant='h3'
+                  color={theme.palette.neutral.light}
+                  fontSize={theme.typography.h3.fontSize}
+                >
                   ADMINIS
                 </Typography>
                 <StyledIcon onClick={() => setIsCollapsed(!isCollapsed)}>
@@ -97,7 +102,8 @@ const Sidebar = () => {
                   fontSize={theme.typography.h2.fontSize}
                   sx={{ m: '10px 0 0 0' }}
                 >
-                  Engenharia de Concursos
+                  Engenharia <br />
+                  de Concursos
                 </Typography>
                 <Typography variant='h5' color={theme.palette.secondary.main}>
                   Simulador de provas
@@ -108,47 +114,47 @@ const Sidebar = () => {
 
           <Box paddingLeft={isCollapsed ? undefined : '10%'}>
             <Item
-              title='Dashboard'
+              title='Página inicial'
               to='/'
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
 
-            <ItemsTile>Data</ItemsTile>
+            <ItemsTile>Dados</ItemsTile>
             <Item
-              title='Manage Team'
-              to='/team'
+              title='Lista de Questões'
+              to='/questions-lists'
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title='Contacts Information'
-              to='/contacts'
+              title='Inserir Questões'
+              to='/add-questions'
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title='Invoices Balances'
-              to='/invoices'
+              title='Buscar Questions'
+              to='/find-questions'
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
 
-            <ItemsTile>Pages</ItemsTile>
+            <ItemsTile>Simulador</ItemsTile>
             <Item
-              title='Profile Form'
-              to='/form'
+              title='Simular Novo Concurso'
+              to='/simulator'
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title='Calendar'
-              to='/calendar'
+              title='Histórico'
+              to='/history'
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -161,17 +167,17 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <ItemsTile>Charts</ItemsTile>
+            <ItemsTile>Sobre nós</ItemsTile>
             <Item
               title='Bar Chart'
-              to='/bar'
+              to='/about'
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title='Pie Chart'
-              to='/pie'
+              title='Entre em contato'
+              to='/contact'
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

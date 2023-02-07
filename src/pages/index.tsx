@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Header } from '@/components/global/Header';
 import Topbar from '@/components/global/Topbar';
-import { HOME_SUBTITLE, HOME_TITLE } from '@/config/app-messages';
+import { HOME_SUBTITLE, HOME_TITLE } from '@/config/appMessages';
 
 export default function Home() {
   return (
