@@ -167,7 +167,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            <ItemsTile>Sobre nós</ItemsTile>
+            <ItemsTile>Sobre</ItemsTile>
             <Item
               title='Bar Chart'
               to='/about'

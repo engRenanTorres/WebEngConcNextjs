@@ -1,11 +1,9 @@
 import Sidebar from '@/components/global/Sidebar';
 import Topbar from '@/components/global/Topbar';
 import { GlobalStyles } from '@/styles/global-styles';
-import { GetTheme } from '@/utils/getTheme';
 import createCache from '@emotion/cache';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from 'styled-components';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
 import PageProvider from '@/utils/theme/PageProvider';
 
