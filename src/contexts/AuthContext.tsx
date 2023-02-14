@@ -1,4 +1,3 @@
-import firebase from '@/config/firebase/firebaseConfig';
 import { User } from '@/domain/users/users';
 import { useRouter } from 'next/router';
 import React, { ReactNode, createContext, useState } from 'react';
@@ -8,10 +7,10 @@ type Props = {
 };
 
 type AuthContextProps = {
-  user?: User | null;
+  currentUser?: User | null;
   loading: boolean;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  signin?: () => {};
+  signin?: (email: string, password: string) => {};
   // eslint-disable-next-line @typescript-eslint/ban-types
   signout?: () => {};
 };
@@ -19,7 +18,7 @@ type AuthContextProps = {
 const userNull = {} as User;
 
 const AuthContext = createContext<AuthContextProps>({
-  user: userNull,
+  currentUser: userNull,
   loading: false,
 });
 
@@ -28,38 +27,38 @@ export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  const signin = async () => {
-    try {
+  const signin = async (email: string, password: string) => {
+    /*try {
       setLoading(true);
-      return firebase
+      return await firebase
         .auth()
-        .signInWithPopup(new firebase.auth.GithubAuthProvider())
+        .signInWithEmailAndPassword(email, password)
         .then((response) => {
           setCurrentUser(response.user);
-          router.push('/dashboard');
+          router.push('/');
         });
     } finally {
       setLoading(false);
-    }
+    }*/
   };
 
   const signout = async () => {
-    try {
+    /*try {
       setLoading(true);
       router.push('/');
 
-      return firebase
+      return await firebase
         .auth()
         .signOut()
         .then(() => setCurrentUser(false));
     } finally {
       setLoading(false);
-    }
+    }*/
   };
 
   return (
     <AuthContext.Provider
-      value={{ user: currentUser, loading, signin, signout }}
+      value={{ currentUser: currentUser, loading, signin, signout }}
     >
       {children}
     </AuthContext.Provider>

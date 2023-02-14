@@ -2,8 +2,10 @@ import Head from 'next/head';
 import { Header } from '@/components/global/Header';
 import Topbar from '@/components/global/Topbar';
 import { HOME_SUBTITLE, HOME_TITLE } from '@/config/appMessages';
+import useAuth from '@/utils/hooks/useAuth';
 
 export default function Home() {
+  const { currentUser, loading, signin, signout } = useAuth();
   return (
     <>
       <Head>

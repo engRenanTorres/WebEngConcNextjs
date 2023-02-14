@@ -4,7 +4,7 @@ import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import { ThemeSwitch } from '@/components/ThemeSwitch';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { StyledBox } from './styles';
 
 const Topbar = () => {
@@ -20,7 +20,7 @@ const Topbar = () => {
 
       {/* ICONS */}
       <Box display='flex'>
-        <ThemeSwitch />
+        <ThemeSwitcher />
         <IconButton className='icon-button'>
           <NotificationsOutlinedIcon />
         </IconButton>

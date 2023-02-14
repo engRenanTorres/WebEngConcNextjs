@@ -6,6 +6,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
 import PageProvider from '@/utils/theme/PageProvider';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 const clientSideEmotionCache = createCache({ key: 'css', prepend: true });
 
@@ -21,18 +22,20 @@ export default function App(props: MyAppProps) {
   } = props;
   return (
     <NextThemeProvider>
-      <CacheProvider value={emotionCahche}>
-        <PageProvider>
-          <div className='app'>
-            <Sidebar />
-            <div className='content-page'>
-              <Topbar />
-              <Component {...pageProps} />
+      <AuthProvider>
+        <CacheProvider value={emotionCahche}>
+          <PageProvider>
+            <div className='app'>
+              <Sidebar />
+              <div className='content-page'>
+                <Topbar />
+                <Component {...pageProps} />
+              </div>
+              <GlobalStyles />
             </div>
-            <GlobalStyles />
-          </div>
-        </PageProvider>
-      </CacheProvider>
+          </PageProvider>
+        </CacheProvider>
+      </AuthProvider>
     </NextThemeProvider>
   );
 }

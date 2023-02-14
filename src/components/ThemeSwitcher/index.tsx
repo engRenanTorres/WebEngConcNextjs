@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
-export const ThemeSwitch: React.FC = () => {
+export const ThemeSwitcher: React.FC = () => {
   const { theme, resolvedTheme, setTheme } = useTheme();
   const handleChangeTheme = (event: ChangeEvent<HTMLInputElement>) => {
     toggleTheme(event.target.checked);
