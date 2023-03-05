@@ -6,8 +6,12 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 import { StyledBox } from './styles';
+import useAuth from '@/utils/hooks/useAuth';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 const Topbar = () => {
+  const { currentUser, loading, signin, signout } = useAuth();
   return (
     <StyledBox>
       {/* SEARCH BAR */}
@@ -28,7 +32,9 @@ const Topbar = () => {
           <SettingsOutlinedIcon />
         </IconButton>
         <IconButton className='icon-button'>
-          <PersonOutlinedIcon />
+          {currentUser && <PersonOutlinedIcon />}
+          {currentUser && <span>{currentUser.name}</span>}
+          {!currentUser && <Link href={'/login'}>Entre</Link>}
         </IconButton>
       </Box>
     </StyledBox>

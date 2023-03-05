@@ -1,59 +1,57 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { User } from '@/domain/users/users';
 import { useRouter } from 'next/router';
 import React, { ReactNode, createContext, useState } from 'react';
+import { auth } from '../config/firebaseConfig';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 type Props = {
   children: ReactNode;
 };
 
 type AuthContextProps = {
-  currentUser?: User | null;
+  currentUser?: User | false;
   loading: boolean;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  signin?: (email: string, password: string) => {};
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  signout?: () => {};
+  signin: (email: string, password: string) => void;
+  signout: () => void;
 };
 
-const userNull = {} as User;
-
 const AuthContext = createContext<AuthContextProps>({
-  currentUser: userNull,
+  currentUser: false,
   loading: false,
+  signin: (email: string, password: string) => {},
+  signout: () => {},
 });
 
 export const AuthProvider: React.FC<Props> = ({ children }: Props) => {
-  const [currentUser, setCurrentUser] = useState<any>(userNull);
+  const [currentUser, setCurrentUser] = useState<any>(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
   const signin = async (email: string, password: string) => {
-    /*try {
+    try {
       setLoading(true);
-      return await firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
+      return await signInWithEmailAndPassword(auth, email, password)
         .then((response) => {
           setCurrentUser(response.user);
+          //console.log('response', response);
           router.push('/');
-        });
+        })
+        .catch((error) => console.log('loginError', error));
     } finally {
       setLoading(false);
-    }*/
+    }
   };
 
   const signout = async () => {
-    /*try {
+    try {
       setLoading(true);
       router.push('/');
 
-      return await firebase
-        .auth()
-        .signOut()
-        .then(() => setCurrentUser(false));
+      return await signOut(auth).then(() => setCurrentUser(false));
     } finally {
       setLoading(false);
-    }*/
+    }
   };
 
   return (

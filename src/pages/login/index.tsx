@@ -7,28 +7,26 @@ interface eventTarget extends HTMLFormControlsCollection {
   password: HTMLInputElement;
 }
 
-const Login = ({ history }: any) => {
+const Login = () => {
   const router = useRouter();
-  const { currentUser, loading, signin, signout } = useAuth();
+  const { signin } = useAuth();
   const handleLogin: FormEventHandler<HTMLFormElement> = useCallback(
     async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       const { email, password } = (event.target as HTMLFormElement)
         .elements as eventTarget;
-      console.log(email.value, password.value);
       try {
-        if (signin) await signin(email.value, password.value);
-        history.push('/');
+        signin(email.value, password.value);
+        router.push('/');
       } catch (error) {
         alert(error);
         console.log(error);
       }
     },
-    [history],
+    [],
   );
 
-  if (currentUser) return router.push('/');
-
+  //if (currentUser) return router.push('/');
   return (
     <div>
       <h1>Login</h1>

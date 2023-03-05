@@ -1,3 +1,5 @@
+import { auth } from '@/config/firebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { FormEventHandler, useCallback } from 'react';
 
 interface eventTarget extends HTMLFormControlsCollection {
@@ -11,16 +13,13 @@ const SignUp = ({ history }: any) => {
       event.preventDefault();
       const { email, password } = (event.target as HTMLFormElement)
         .elements as eventTarget;
-      console.log(email.value, password.value);
-      /*try {
-        await appFB
-          .auth()
-          .createUserWithEmailAndPassword(email.value, password.value);
-        history.push('/');
+      try {
+        await createUserWithEmailAndPassword(auth, email.value, password.value);
+        //history.push('/');
       } catch (error) {
         alert(error);
         console.log(error);
-      }*/
+      }
     },
     [],
   );
